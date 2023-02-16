@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HorarioSemanal.formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,11 +19,20 @@ namespace HorarioSemanal
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void VerHorario_Click(object sender, EventArgs e)
         {
-            this.button1.Visible = false;
-            Horario_Turma horario = new Horario_Turma(this);
-            horario.Show();
+            Tela_To_Horario tela_to_horario = new Tela_To_Horario(this);
+            tela_to_horario.Show();
+            this.Visible = false;
+
+        }
+
+        private void AlterarHorario_Click(object sender, EventArgs e)
+        {
+            Tela_To_Horario tela_to_horario = new Tela_To_Horario(this, true);
+            tela_to_horario.Show();
             this.Visible = false;
         }
     }

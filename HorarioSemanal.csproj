@@ -77,10 +77,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
-    <Compile Include="Horario_Turma.cs">
+    <Compile Include="formularios\Tela_To_Horario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Horario_Turma.Designer.cs">
+    <Compile Include="formularios\Tela_To_Horario.Designer.cs">
+      <DependentUpon>Tela_To_Horario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios\Horario_Turma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\Horario_Turma.Designer.cs">
       <DependentUpon>Horario_Turma.cs</DependentUpon>
     </Compile>
     <Compile Include="Tela_Principal.cs">
@@ -91,7 +97,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Horario_Turma.resx">
+    <EmbeddedResource Include="formularios\Tela_To_Horario.resx">
+      <DependentUpon>Tela_To_Horario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\Horario_Turma.resx">
       <DependentUpon>Horario_Turma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -29,25 +29,38 @@ namespace HorarioSemanal
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.VerHorario = new System.Windows.Forms.Button();
+            this.AlterarHorario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // VerHorario
             // 
-            this.button1.Location = new System.Drawing.Point(164, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 100);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "HorarioSemanal";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.VerHorario.Location = new System.Drawing.Point(208, 108);
+            this.VerHorario.Name = "VerHorario";
+            this.VerHorario.Size = new System.Drawing.Size(157, 123);
+            this.VerHorario.TabIndex = 2;
+            this.VerHorario.Text = "Ver Horario";
+            this.VerHorario.UseVisualStyleBackColor = true;
+            this.VerHorario.Click += new System.EventHandler(this.VerHorario_Click);
+            // 
+            // AlterarHorario
+            // 
+            this.AlterarHorario.Location = new System.Drawing.Point(577, 108);
+            this.AlterarHorario.Name = "AlterarHorario";
+            this.AlterarHorario.Size = new System.Drawing.Size(157, 123);
+            this.AlterarHorario.TabIndex = 3;
+            this.AlterarHorario.Text = "Alterar Horario";
+            this.AlterarHorario.UseVisualStyleBackColor = true;
+            this.AlterarHorario.Click += new System.EventHandler(this.AlterarHorario_Click);
             // 
             // Tela_Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.AlterarHorario);
+            this.Controls.Add(this.VerHorario);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Tela_Principal";
             this.Text = "Tela Principal";
             this.ResumeLayout(false);
@@ -55,8 +68,8 @@ namespace HorarioSemanal
         }
 
         #endregion
-
-        public System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button VerHorario;
+        private System.Windows.Forms.Button AlterarHorario;
     }
 }
 

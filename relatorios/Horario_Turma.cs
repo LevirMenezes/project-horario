@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Conexao;
+using HorarioSemanal.formularios;
 
 namespace HorarioSemanal
 {
@@ -15,17 +16,17 @@ namespace HorarioSemanal
     public partial class Horario_Turma : Form
     {
 
-        private Tela_Principal telaPrincipal;
+        private Tela_To_Horario telaIntermediaria;
         List<Label> Segunda;
         List<Label> Terca;
         List<Label> Quarta;
         List<Label> Quinta;
         List<Label> Sexta;
         SQLiteDB db = new SQLiteDB();
-        public Horario_Turma(Tela_Principal tela)
+        public Horario_Turma(Tela_To_Horario tela, string periodo)
         {
             InitializeComponent();
-            this.telaPrincipal = tela;
+            this.telaIntermediaria = tela;
             Segunda = new List<Label>() { this.Segunda1, this.Segunda2, this.Segunda3, this.Segunda4 };
             Terca = new List<Label>() { this.Terca1, this.Terca2, this.Terca3, this.Terca4 };
             Quarta = new List<Label>() { this.Quarta1, this.Quarta2, this.Quarta3, this.Quarta4 };
@@ -34,18 +35,18 @@ namespace HorarioSemanal
             
             
 
-            MostraSegunda();
-            MostraTerca();
-            MostraQuarta();
-            MostraQuinta();
-            MostraSexta();
+            MostraSegunda(periodo);
+            MostraTerca(periodo);
+            MostraQuarta(periodo);
+            MostraQuinta(periodo);
+            MostraSexta(periodo);
 
 
         }
 
-        private void MostraSegunda()
+        private void MostraSegunda(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("segunda");
+            List<SQLiteDB.Horarios> hour = db.GetHorario("segunda",periodo);
             if (hour.Count > 0)
             {
                 int c = 0;
@@ -64,9 +65,9 @@ namespace HorarioSemanal
 
             }
         }
-        private void MostraTerca()
+        private void MostraTerca(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("terca");
+            List<SQLiteDB.Horarios> hour = db.GetHorario("terca",periodo);
             if (hour.Count > 0)
             {
                 int c = 0;
@@ -85,9 +86,9 @@ namespace HorarioSemanal
 
             }
         }
-        private void MostraQuarta()
+        private void MostraQuarta(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("quarta");
+            List<SQLiteDB.Horarios> hour = db.GetHorario("quarta", periodo);
             if (hour.Count > 0)
             {
                 int c = 0;
@@ -106,9 +107,9 @@ namespace HorarioSemanal
 
             }
         }
-        private void MostraQuinta()
+        private void MostraQuinta(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("quinta");
+            List<SQLiteDB.Horarios> hour = db.GetHorario("quinta", periodo);
             if (hour.Count > 0)
             {
                 int c = 0;
@@ -127,9 +128,9 @@ namespace HorarioSemanal
 
             }
         }
-        private void MostraSexta()
+        private void MostraSexta(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("sexta");
+            List<SQLiteDB.Horarios> hour = db.GetHorario("sexta", periodo);
             if (hour.Count > 0)
             {
                 int c = 0;
@@ -171,10 +172,10 @@ namespace HorarioSemanal
 
 
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void VoltarHorario_Click_1(object sender, EventArgs e)
         {
-            this.telaPrincipal.Visible = true;
-            this.telaPrincipal.button1.Visible = true;
+            this.telaIntermediaria.Visible = true;
+            
             this.Close();
         }
     }

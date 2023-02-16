@@ -11,7 +11,7 @@ namespace Conexao
     public partial class SQLiteDB
     {
         //database path
-        private readonly string dbPath = Path.Combine(@"C:\Users\tipvh003\Source\Repos\HorarioSemanal\Banco", "myhorario.db");
+        private readonly string dbPath = Path.Combine(@"C:\Users\levir\Downloads\project-horario\Banco", "myhorario.db");
         public SQLiteDB()
         {
             try
@@ -534,7 +534,7 @@ namespace Conexao
 
         }
 
-        public List<Horarios> GetHorario(string nome)
+        public List<Horarios> GetHorario(string nome, string periodo)
         {
             var db = new SQLiteConnection(dbPath);
             var table = db.Table<Horarios>().ToList();
@@ -543,7 +543,7 @@ namespace Conexao
             {
                 foreach (var horario in table)
                 {
-                    if (horario.DiaSemana == nome)
+                    if (horario.DiaSemana == nome && horario.Periodo == periodo)
                     {
                         lista.Add(horario);
                     }
