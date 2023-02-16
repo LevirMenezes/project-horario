@@ -77,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
+    <Compile Include="formularios\Tela_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Tela_Cadastro.Designer.cs">
+      <DependentUpon>Tela_Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Tela_To_Horario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formularios\Tela_Cadastro.resx">
+      <DependentUpon>Tela_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Tela_To_Horario.resx">
       <DependentUpon>Tela_To_Horario.cs</DependentUpon>
     </EmbeddedResource>

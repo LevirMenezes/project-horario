@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,166 +18,325 @@ namespace HorarioSemanal
     {
 
         private Tela_To_Horario telaIntermediaria;
-        List<Label> Segunda;
-        List<Label> Terca;
-        List<Label> Quarta;
-        List<Label> Quinta;
-        List<Label> Sexta;
-        SQLiteDB db = new SQLiteDB();
+
+        private SQLiteDB db;
+        private string Periodo;
         public Horario_Turma(Tela_To_Horario tela, string periodo)
         {
             InitializeComponent();
             this.telaIntermediaria = tela;
-            Segunda = new List<Label>() { this.Segunda1, this.Segunda2, this.Segunda3, this.Segunda4 };
-            Terca = new List<Label>() { this.Terca1, this.Terca2, this.Terca3, this.Terca4 };
-            Quarta = new List<Label>() { this.Quarta1, this.Quarta2, this.Quarta3, this.Quarta4 };
-            Quinta = new List<Label>() { this.Quinta1, this.Quinta2, this.Quinta3, this.Quinta4 };
-            Sexta = new List<Label>() { this.Sexta1, this.Sexta2, this.Sexta3, this.Sexta4 };
-            
-            
 
-            MostraSegunda(periodo);
-            MostraTerca(periodo);
-            MostraQuarta(periodo);
-            MostraQuinta(periodo);
-            MostraSexta(periodo);
+            this.Periodo = periodo;
+
+
+            
 
 
         }
 
         private void MostraSegunda(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("segunda",periodo);
-            if (hour.Count > 0)
+            try
             {
-                int c = 0;
+                this.db = new SQLiteDB();
 
-                foreach (var h in hour)
+                List<SQLiteDB.Horarios> hour = db.GetHorario("segunda", periodo);
+                if (hour.Count > 0)
                 {
-                    if (c == 4)
+                    
+
+                    foreach (var h in hour)
                     {
-                        break;
+                       
+                        if (h.Tempo == "1")
+                        {
+                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+
+                        }
+                        else if (h.Tempo == "2")
+                        {
+                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (h.Tempo == "3")
+                        {
+                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (h.Tempo == "4")
+                        {
+                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                       
+
                     }
 
-                    Segunda[c].Text = db.GetDisciplina(h.disciplina_id);
-                    c++;
-
                 }
-
             }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Aviso de Erro", e.Message);
+            }
+            finally
+            {
+                this.db.FechaConexao(); // fecha conexão com o banco
+            }
+
         }
         private void MostraTerca(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("terca",periodo);
-            if (hour.Count > 0)
+            try
             {
-                int c = 0;
+                this.db = new SQLiteDB();
 
-                foreach (var h in hour)
+                List<SQLiteDB.Horarios> hour = db.GetHorario("terca", periodo);
+                if (hour.Count > 0)
                 {
-                    if (c == 4)
+                    int c = 0;
+
+                    foreach (var h in hour)
                     {
-                        break;
+                        if (c == 4)
+                        {
+                            break;
+                        }
+                        else if (c == 0)
+                        {
+                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+
+                        }
+                        else if (c == 1)
+                        {
+                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 2)
+                        {
+                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 3)
+                        {
+                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        c++;
+
                     }
 
-                    Terca[c].Text = db.GetDisciplina(h.disciplina_id);
-                    c++;
-
                 }
-
             }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Aviso de Erro", e.Message);
+            }
+            finally
+            {
+                this.db.FechaConexao(); // fecha conexão com o banco
+            }
+
         }
         private void MostraQuarta(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("quarta", periodo);
-            if (hour.Count > 0)
+            try
             {
-                int c = 0;
+                this.db = new SQLiteDB();
 
-                foreach (var h in hour)
+                List<SQLiteDB.Horarios> hour = db.GetHorario("quarta", periodo);
+                if (hour.Count > 0)
                 {
-                    if (c == 4)
+                    int c = 0;
+
+                    foreach (var h in hour)
                     {
-                        break;
+                        if (c == 4)
+                        {
+                            break;
+                        }
+                        else if (c == 0)
+                        {
+                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+
+                        }
+                        else if (c == 1)
+                        {
+                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 2)
+                        {
+                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 3)
+                        {
+                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        c++;
+
                     }
 
-                    Quarta[c].Text = db.GetDisciplina(h.disciplina_id);
-                    c++;
-
                 }
-
             }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Aviso de Erro", e.Message);
+            }
+            finally
+            {
+                this.db.FechaConexao(); // fecha conexão com o banco
+            }
+
         }
         private void MostraQuinta(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("quinta", periodo);
-            if (hour.Count > 0)
+            try
             {
-                int c = 0;
+                this.db = new SQLiteDB();
 
-                foreach (var h in hour)
+                List<SQLiteDB.Horarios> hour = db.GetHorario("quinta", periodo);
+                if (hour.Count > 0)
                 {
-                    if (c == 4)
+                    int c = 0;
+
+                    foreach (var h in hour)
                     {
-                        break;
+                        if (c == 4)
+                        {
+                            break;
+                        }
+                        else if (c == 0)
+                        {
+                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+
+                        }
+                        else if (c == 1)
+                        {
+                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 2)
+                        {
+                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 3)
+                        {
+                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        c++;
+
                     }
 
-                    Quinta[c].Text = db.GetDisciplina(h.disciplina_id);
-                    c++;
-
                 }
-
             }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Aviso de Erro", e.Message);
+            }
+            finally
+            {
+                this.db.FechaConexao(); // fecha conexão com o banco
+            }
+
         }
         private void MostraSexta(string periodo)
         {
-            List<SQLiteDB.Horarios> hour = db.GetHorario("sexta", periodo);
-            if (hour.Count > 0)
+            try
             {
-                int c = 0;
+                this.db = new SQLiteDB();
 
-                foreach (var h in hour)
+                List<SQLiteDB.Horarios> hour = db.GetHorario("sexta", periodo);
+                if (hour.Count > 0)
                 {
-                    if (c == 4)
+                    int c = 0;
+
+                    foreach (var h in hour)
                     {
-                        break;
+                        if (c == 4)
+                        {
+                            break;
+                        }
+                        else if (c == 0)
+                        {
+                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+
+                        }
+                        else if (c == 1)
+                        {
+                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 2)
+                        {
+                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+                        else if (c == 3)
+                        {
+                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                        }
+
+                        c++;
+
                     }
 
-                    Sexta[c].Text = db.GetDisciplina(h.disciplina_id);
-                    c++;
-
                 }
-
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
+            catch (SqlException e)
+            {
+                MessageBox.Show("Aviso de Erro", e.Message);
+            }
+            finally
+            {
+                this.db.FechaConexao(); // fecha conexão com o banco
+            }
 
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
 
         private void VoltarHorario_Click_1(object sender, EventArgs e)
         {
             this.telaIntermediaria.Visible = true;
-            
+
             this.Close();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            MostraSegunda(Periodo);
+            MostraTerca(Periodo);
+            MostraQuarta(Periodo);
+            MostraQuinta(Periodo);
+            MostraSexta(Periodo);
         }
     }
 }

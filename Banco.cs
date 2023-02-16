@@ -2,16 +2,19 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
+
 namespace Conexao
 
 {
     public partial class SQLiteDB
     {
         //database path
-        private readonly string dbPath = Path.Combine(@"C:\Users\levir\Downloads\project-horario\Banco", "myhorario.db");
+        private readonly string dbPath = Path.Combine(@"C:\Users\tipvh003\Source\Repos\HorarioSemanal\Banco", "myhorario.db");
         public SQLiteDB()
         {
             try
@@ -36,6 +39,7 @@ namespace Conexao
                     db.CreateTable<Horarios>();
 
                     #endregion
+
                 }
 
 
@@ -48,6 +52,140 @@ namespace Conexao
 
         }
 
+        public void FechaConexao()
+        {
+            var db = new SQLiteConnection(dbPath);
+            db.Close();
+
+        }
+
+
+        public bool AtualizaHorario(string dia, string periodo, string tempo, string nomeDisciplina="", string nomeAmbiente="", string nomeDocente = "")
+        {
+           
+            var db = new SQLiteConnection(dbPath);
+            try
+            {
+                var existeHorario = db.Query<Horarios>("select * from Horario where dia_segunda = ? ANB periodo = ? AND tempo = ?", dia, periodo, tempo).FirstOrDefault();
+                if (existeHorario != null)
+                {
+
+                    if (VerificaExisteDisciplina(nomeDisciplina))
+                    {
+                        
+                        existeHorario.disciplina_id = GetIdDisciplina(nomeDisciplina);
+                        if (VerificaExisteAmbiente(nomeAmbiente))
+                        {
+
+                            existeHorario.ambiente_id = GetIdAmbiente(nomeAmbiente);
+                            if (VerificaExisteDocente(nomeDocente))
+                            {
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+                            else
+                            {
+
+                                SQLiteDB.Docente docente = new SQLiteDB.Docente();
+                                docente.Nome = nomeDocente;
+                                db.Insert(docente);
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+                        }
+                        else
+                        {
+                            SQLiteDB.Ambiente ambiente = new SQLiteDB.Ambiente();
+                            ambiente.Nome = nomeAmbiente;
+                            db.Insert(ambiente);
+                            existeHorario.ambiente_id = GetIdAmbiente(nomeAmbiente);
+                            
+                            if (VerificaExisteDocente(nomeDocente))
+                            {
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+                            else
+                            {
+
+                                SQLiteDB.Docente docente = new SQLiteDB.Docente();
+                                docente.Nome = nomeDocente;
+                                db.Insert(docente);
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+
+                        }
+                        
+
+                    }
+                    else
+                    {
+                        SQLiteDB.Disciplina disciplina = new SQLiteDB.Disciplina();
+                        disciplina.Nome = nomeDisciplina;
+                        db.Insert(disciplina);
+                        existeHorario.disciplina_id = GetIdDisciplina(nomeDisciplina);
+                        if (VerificaExisteAmbiente(nomeAmbiente))
+                        {
+
+                            existeHorario.ambiente_id = GetIdAmbiente(nomeAmbiente);
+                            if (VerificaExisteDocente(nomeDocente))
+                            {
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+                            else
+                            {
+
+                                SQLiteDB.Docente docente = new SQLiteDB.Docente();
+                                docente.Nome = nomeDocente;
+                                db.Insert(docente);
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+                        }
+                        else
+                        {
+                            SQLiteDB.Ambiente ambiente = new SQLiteDB.Ambiente();
+                            ambiente.Nome = nomeAmbiente;
+                            db.Insert(ambiente);
+                            existeHorario.ambiente_id = GetIdAmbiente(nomeAmbiente);
+
+                            if (VerificaExisteDocente(nomeDocente))
+                            {
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+                            else
+                            {
+
+                                SQLiteDB.Docente docente = new SQLiteDB.Docente();
+                                docente.Nome = nomeDocente;
+                                db.Insert(docente);
+                                existeHorario.docente_id = GetIdDocente(nomeDocente);
+                            }
+
+                        }
+
+                    }
+                    
+
+
+
+
+                    db.RunInTransaction(() =>
+                    {
+                        db.Update(existeHorario);
+                    });
+                    return true;
+                }
+                return false;
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Aviso de Erro", e.Message);
+                return false;
+            }
+            finally
+            {
+                FechaConexao(); // fecha conexão com o banco
+                
+            }
+
+        }
 
         public void InsertSegunda()
         {
@@ -154,7 +292,7 @@ namespace Conexao
         public void InsertTerca()
         {
             var db = new SQLiteConnection(dbPath);
-           
+
             #region disciplina
             Disciplina d = new Disciplina();
             d.Nome = "Logica de Programacão";
@@ -172,7 +310,7 @@ namespace Conexao
             #endregion
 
             #region Ambiente
-            
+
             var AmbienteTB = db.Table<Ambiente>();
             int IdAmbiente = 0;
             foreach (var amb in AmbienteTB)
@@ -267,8 +405,8 @@ namespace Conexao
             #endregion
 
             #region Ambiente
-            
-           
+
+
             var AmbienteTB = db.Table<Ambiente>();
             int IdAmbiente = 0;
             foreach (var amb in AmbienteTB)
@@ -436,8 +574,8 @@ namespace Conexao
 
             }
 
-        }      
-        
+        }
+
         public void InsertSexta()
         {
             var db = new SQLiteConnection(dbPath);
@@ -554,18 +692,145 @@ namespace Conexao
 
         }
 
-        public string GetDisciplina(int id)
+
+        public bool VerificaExisteDisciplina(string nome)
+        {
+            var db = new SQLiteConnection(dbPath);
+            
+            var existeDisciplina = db.Query<Disciplina>("select * from Disciplina where nome = ?", nome).FirstOrDefault();
+            if (existeDisciplina != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
+        public bool VerificaExisteAmbiente(string nome)
+        {
+            var db = new SQLiteConnection(dbPath);
+            
+            var existeAmbiente = db.Query<Ambiente>("select * from Ambiente where nome = ?", nome).FirstOrDefault();
+            if (existeAmbiente != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
+        public bool VerificaExisteDocente(string nome)
+        {
+            var db = new SQLiteConnection(dbPath);
+            
+            var existeDocente = db.Query<Docente>("select * from Docente where nome = ?", nome).FirstOrDefault();
+            if (existeDocente != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
+        public int GetIdDisciplina(string nome)
+        {
+            var db = new SQLiteConnection(dbPath);
+            var disci = db.Query<Disciplina>("select * from Disciplina where nome = ?", nome).FirstOrDefault();
+            if (disci != null)
+            {
+                return disci.Id;
+            }
+            return 0;
+        }
+
+         public int GetIdAmbiente(string nome)
+        {
+            var db = new SQLiteConnection(dbPath);
+            var ambient = db.Query<Ambiente>("select * from Ambiente where nome = ?", nome).FirstOrDefault();
+            if (ambient != null)
+            {
+                return ambient.Id;
+            }
+            return 0;
+        }
+
+         public int GetIdDocente(string nome)
+        {
+            var db = new SQLiteConnection(dbPath);
+            var doc = db.Query<Docente>("select * from Docente where nome = ?", nome).FirstOrDefault();
+            if (doc != null)
+            {
+                return doc.Id;
+            }
+            return 0;
+        }
+
+
+
+        public Disciplina GetNomeDisciplina(int id)
         {
             var db = new SQLiteConnection(dbPath);
             var table = db.Table<Disciplina>().ToList();
-            
+
             if (table.Count > 0)
             {
-                foreach (var disc in table)
+                foreach (Disciplina disc in table)
                 {
                     if (disc.Id == id)
                     {
-                        return disc.Nome;
+                        return disc;
+                    }
+                }
+
+            }
+            return null;
+
+        }
+
+        public Ambiente GetNomeAmbiente(int id)
+        {
+            var db = new SQLiteConnection(dbPath);
+            var table = db.Table<Ambiente>().ToList();
+
+            if (table.Count > 0)
+            {
+                foreach (Ambiente ambient in table)
+                {
+                    if (ambient.Id == id)
+                    {
+                        return ambient;
+                    }
+                }
+
+            }
+            return null;
+
+        }
+
+        public Docente GetNomeDocente(int id)
+        {
+            var db = new SQLiteConnection(dbPath);
+            var table = db.Table<Docente>().ToList();
+
+            if (table.Count > 0)
+            {
+                foreach (Docente doc in table)
+                {
+                    if (doc.Id == id)
+                    {
+                        return doc;
                     }
                 }
 
