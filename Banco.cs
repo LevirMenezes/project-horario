@@ -66,7 +66,8 @@ namespace Conexao
             var db = new SQLiteConnection(dbPath);
             try
             {
-                var existeHorario = db.Query<Horarios>("select * from Horario where dia_segunda = ? ANB periodo = ? AND tempo = ?", dia, periodo, tempo).FirstOrDefault();
+                var existeHorario = db.Query<Horarios>(@"SELECT * FROM Horarios
+WHERE dia_semana = '?' AND periodo = '?' AND tempo = '?';", dia, periodo, tempo).FirstOrDefault();
                 if (existeHorario != null)
                 {
 
