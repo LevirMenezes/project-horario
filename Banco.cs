@@ -14,7 +14,7 @@ namespace Conexao
     public partial class SQLiteDB
     {
         //database path
-        private readonly string dbPath = Path.Combine(@"C:\Users\tipvh003\Source\Repos\HorarioSemanal\Banco", "myhorario.db");
+        private readonly string dbPath = Path.Combine(@"C:\Users\levir\Downloads\project-horario\Banco", "myhorario.db");
         public SQLiteDB()
         {
             try

@@ -43,37 +43,43 @@ namespace HorarioSemanal
                 List<SQLiteDB.Horarios> hour = db.GetHorario("segunda", periodo);
                 if (hour.Count > 0)
                 {
-                    
+
+
+                    int c = 0;
 
                     foreach (var h in hour)
                     {
-                       
-                        if (h.Tempo == "1")
+                        if (c == 4)
                         {
-                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            break;
+                        }
+                        else if (c == 0)
+                        {
+                            TxtSeg1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
 
                         }
-                        else if (h.Tempo == "2")
+                        else if (c == 1)
                         {
-                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            TxtSeg2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
-                        else if (h.Tempo == "3")
+                        else if (c == 2)
                         {
-                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            TxtSeg3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
-                        else if (h.Tempo == "4")
+                        else if (c == 3)
                         {
-                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            TxtSeg4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
-                       
+
+                        c++;
 
                     }
 
@@ -108,28 +114,28 @@ namespace HorarioSemanal
                         }
                         else if (c == 0)
                         {
-                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtTer1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfTer1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbTer1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
 
                         }
                         else if (c == 1)
                         {
-                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtTer2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfTer2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbTer2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         else if (c == 2)
                         {
-                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtTer3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfTer3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbTer3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         else if (c == 3)
                         {
-                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtTer4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfTer4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbTer4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         c++;
 
@@ -166,28 +172,28 @@ namespace HorarioSemanal
                         }
                         else if (c == 0)
                         {
-                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQua1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQua1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQua1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
 
                         }
                         else if (c == 1)
                         {
-                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQua2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQua2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQua2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         else if (c == 2)
                         {
-                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQua3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQua3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQua3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         else if (c == 3)
                         {
-                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQua4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQua4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQua4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         c++;
 
@@ -224,28 +230,28 @@ namespace HorarioSemanal
                         }
                         else if (c == 0)
                         {
-                            this.TxtSex1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQui1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQui1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQui1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
 
                         }
                         else if (c == 1)
                         {
-                            this.TxtSex2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQui2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQui2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQui2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         else if (c == 2)
                         {
-                            this.TxtSex3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQui3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQui3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQui3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         else if (c == 3)
                         {
-                            this.TxtSex4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
-                            this.ProfSex4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
-                            this.AmbSex4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+                            this.TxtQui4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            this.ProfQui4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            this.AmbQui4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
                         }
                         c++;
 
