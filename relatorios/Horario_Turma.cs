@@ -43,37 +43,67 @@ namespace HorarioSemanal
                 List<SQLiteDB.Horarios> hour = db.GetHorario("segunda", periodo);
                 if (hour.Count > 0)
                 {
-                    
+
+
+                    int c = 0;
 
                     foreach (var h in hour)
                     {
-                       
-                        if (h.Tempo == "1")
+                        if (c == 4)
                         {
+<<<<<<< HEAD
                             this.TxtSeg1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
                             this.ProfSeg1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
                             this.AmbSeg1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+=======
+                            break;
+                        }
+                        else if (c == 0)
+                        {
+                            TxtSeg1.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg1.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg1.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+>>>>>>> bf9874ef8d918dbb0b447e001c848098b6ce915b
 
                         }
-                        else if (h.Tempo == "2")
+                        else if (c == 1)
                         {
+<<<<<<< HEAD
                             this.TxtSeg2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
                             this.ProfSeg2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
                             this.AmbSeg2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+=======
+                            TxtSeg2.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg2.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg2.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+>>>>>>> bf9874ef8d918dbb0b447e001c848098b6ce915b
                         }
-                        else if (h.Tempo == "3")
+                        else if (c == 2)
                         {
+<<<<<<< HEAD
                             this.TxtSeg3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
                             this.ProfSeg3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
                             this.AmbSeg3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+=======
+                            TxtSeg3.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg3.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg3.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+>>>>>>> bf9874ef8d918dbb0b447e001c848098b6ce915b
                         }
-                        else if (h.Tempo == "4")
+                        else if (c == 3)
                         {
+<<<<<<< HEAD
                             this.TxtSeg4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
                             this.ProfSeg4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
                             this.AmbSeg4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+=======
+                            TxtSeg4.Text = this.db.GetNomeDisciplina(h.disciplina_id).Nome;
+                            ProfSeg4.Text = this.db.GetNomeDocente(h.docente_id).Nome;
+                            AmbSeg4.Text = this.db.GetNomeAmbiente(h.ambiente_id).Nome;
+>>>>>>> bf9874ef8d918dbb0b447e001c848098b6ce915b
                         }
-                       
+
+                        c++;
 
                     }
 
