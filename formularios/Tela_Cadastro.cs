@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Conexao;
+using static Conexao.SQLiteDB;
 
 
 namespace HorarioSemanal.formularios
@@ -23,6 +24,7 @@ namespace HorarioSemanal.formularios
             InitializeComponent();
             this.telaIntermediaria = tela;
             this.Periodo = periodo;
+            NumPeriodo.Text = periodo;
             MostraSegunda(Periodo);
             MostraTerca(Periodo);
             MostraQuarta(Periodo);
@@ -95,18 +97,37 @@ namespace HorarioSemanal.formularios
                 {
                     this.db = new SQLiteDB();
 
-
-                    this.db.AtualizaHorario("segunda", periodo, "1", TxtSeg1.Text, AmbSeg1.Text, ProfSeg1.Text);
-
-                    this.db.AtualizaHorario("segunda", periodo, "2", TxtSeg2.Text, AmbSeg2.Text, ProfSeg2.Text);
-
-                    this.db.AtualizaHorario("segunda", periodo, "3", TxtSeg3.Text, AmbSeg3.Text, ProfSeg3.Text);
-
-                    this.db.AtualizaHorario("segunda", periodo, "4", TxtSeg4.Text, AmbSeg4.Text, ProfSeg4.Text);
-
+                    string diaSemana = "segunda";
 
                     
+                    
+                    bool AlterBancoSeg1 = this.db.AtualizaHorario(diaSemana, periodo, "1", TxtSeg1.Text, AmbSeg1.Text, ProfSeg1.Text);
+                    if (!AlterBancoSeg1)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "1", TxtSeg1.Text, AmbSeg1.Text, ProfSeg1.Text);
+                    }
 
+                    bool AlterBancoSeg2 = this.db.AtualizaHorario(diaSemana, periodo, "2", TxtSeg2.Text, AmbSeg2.Text, ProfSeg2.Text);
+                    if (!AlterBancoSeg2)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "2", TxtSeg2.Text, AmbSeg2.Text, ProfSeg2.Text);
+                    }
+
+                    bool AlterBancoSeg3 = this.db.AtualizaHorario(diaSemana, periodo, "3", TxtSeg3.Text, AmbSeg3.Text, ProfSeg3.Text);
+                    if (!AlterBancoSeg3)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "3", TxtSeg3.Text, AmbSeg3.Text, ProfSeg3.Text);
+                    }
+
+                    bool AlterBancoSeg4 = this.db.AtualizaHorario(diaSemana, periodo, "4", TxtSeg4.Text, AmbSeg4.Text, ProfSeg4.Text);
+                    if (!AlterBancoSeg4)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "4", TxtSeg4.Text, AmbSeg4.Text, ProfSeg4.Text);
+
+
+
+
+                    }
 
 
 
@@ -181,15 +202,34 @@ namespace HorarioSemanal.formularios
                 else
                 {
                     this.db = new SQLiteDB();
+                    string diaSemana = "terca";
+
+                    bool AlterBancoTer1 = this.db.AtualizaHorario(diaSemana, periodo, "1", TxtTer1.Text, AmbTer1.Text, ProfTer1.Text);
+                    if (!AlterBancoTer1)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "1", TxtTer1.Text, AmbTer1.Text, ProfTer1.Text);
+                    }
+
+                    bool AlterBancoTer2 = this.db.AtualizaHorario(diaSemana, periodo, "2", TxtTer2.Text, AmbTer2.Text, ProfTer2.Text);
+                    if (!AlterBancoTer2)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "2", TxtTer2.Text, AmbTer2.Text, ProfTer2.Text);
+                    }
+
+                    bool AlterBancoTer3 = this.db.AtualizaHorario(diaSemana, periodo, "3", TxtTer3.Text, AmbTer3.Text, ProfTer3.Text);
+                    if (!AlterBancoTer3)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "3", TxtTer3.Text, AmbTer3.Text, ProfTer3.Text);
+                    }
+
+                    bool AlterBancoTer4 = this.db.AtualizaHorario(diaSemana, periodo, "4", TxtTer4.Text, AmbTer4.Text, ProfTer4.Text);
+                    if (!AlterBancoTer4)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "4", TxtTer4.Text, AmbTer4.Text, ProfTer4.Text);
+                    }
 
 
-                    this.db.AtualizaHorario("terca", periodo, "1", TxtTer1.Text, AmbTer1.Text, ProfTer1.Text);
 
-                    this.db.AtualizaHorario("terca", periodo, "2", TxtTer2.Text, AmbTer2.Text, ProfTer2.Text);
-
-                    this.db.AtualizaHorario("terca", periodo, "3", TxtTer3.Text, AmbTer3.Text, ProfTer3.Text);
-
-                    this.db.AtualizaHorario("terca", periodo, "4", TxtTer4.Text, AmbTer4.Text, ProfTer4.Text);
 
 
                 }
@@ -261,15 +301,34 @@ namespace HorarioSemanal.formularios
                 else
                 {
                     this.db = new SQLiteDB();
+                    string diaSemana = "quarta";
+
+                    bool AlterBancoQua1 = this.db.AtualizaHorario(diaSemana, periodo, "1", TxtQua1.Text, AmbQua1.Text, ProfQua1.Text);
+                    if (!AlterBancoQua1)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "1", TxtQua1.Text, AmbQua1.Text, ProfQua1.Text);
+                    }
+
+                    bool AlterBancoQua2 = this.db.AtualizaHorario(diaSemana, periodo, "2", TxtQua2.Text, AmbQua2.Text, ProfQua2.Text);
+                    if (!AlterBancoQua2)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "2", TxtQua2.Text, AmbQua2.Text, ProfQua2.Text);
+                    }
+
+                    bool AlterBancoQua3 = this.db.AtualizaHorario(diaSemana, periodo, "3", TxtQua3.Text, AmbQua3.Text, ProfQua3.Text);
+                    if (!AlterBancoQua3)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "3", TxtQua3.Text, AmbQua3.Text, ProfQua3.Text);
+                    }
+
+                    bool AlterBancoQua4 = this.db.AtualizaHorario(diaSemana, periodo, "4", TxtQua4.Text, AmbQua4.Text, ProfQua4.Text);
+                    if (!AlterBancoQua4)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "4", TxtQua4.Text, AmbQua4.Text, ProfQua4.Text);
+                    }
 
 
-                    this.db.AtualizaHorario("quarta", periodo, "1", TxtQua1.Text, AmbQua1.Text, ProfQua1.Text);
-
-                    this.db.AtualizaHorario("quarta", periodo, "2", TxtQua2.Text, AmbQua2.Text, ProfQua2.Text);
-
-                    this.db.AtualizaHorario("quarta", periodo, "3", TxtQua3.Text, AmbQua3.Text, ProfQua3.Text);
-
-                    this.db.AtualizaHorario("quarta", periodo, "4", TxtQua4.Text, AmbQua4.Text, ProfQua4.Text);
+                   
 
 
                 }
@@ -340,15 +399,32 @@ namespace HorarioSemanal.formularios
                 else
                 {
                     this.db = new SQLiteDB();
+                    string diaSemana = "quinta";
+                    
 
+                    bool AlterBancoQui1 = this.db.AtualizaHorario(diaSemana, periodo, "1", TxtQui1.Text, AmbQui1.Text, ProfQui1.Text);
+                    if (!AlterBancoQui1)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "1", TxtQui1.Text, AmbQui1.Text, ProfQui1.Text);
+                    }
 
-                    this.db.AtualizaHorario("quinta", periodo, "1", TxtQui1.Text, AmbQui1.Text, ProfQui1.Text);
+                    bool AlterBancoQui2 = this.db.AtualizaHorario(diaSemana, periodo, "2", TxtQui2.Text, AmbQui2.Text, ProfQui2.Text);
+                    if (!AlterBancoQui2)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "2", TxtQui2.Text, AmbQui2.Text, ProfQui2.Text);
+                    }
 
-                    this.db.AtualizaHorario("quinta", periodo, "2", TxtQui2.Text, AmbQui2.Text, ProfQui2.Text);
+                    bool AlterBancoQui3 = this.db.AtualizaHorario(diaSemana, periodo, "3", TxtQui3.Text, AmbQui3.Text, ProfQui3.Text);
+                    if (!AlterBancoQui3)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "3", TxtQui3.Text, AmbQui3.Text, ProfQui3.Text);
+                    }
 
-                    this.db.AtualizaHorario("quinta", periodo, "3", TxtQui3.Text, AmbQui3.Text, ProfQui3.Text);
-
-                    this.db.AtualizaHorario("quinta", periodo, "4", TxtQui4.Text, AmbQui4.Text, ProfQui4.Text);
+                    bool AlterBancoQui4 = this.db.AtualizaHorario(diaSemana, periodo, "4", TxtQui4.Text, AmbQui4.Text, ProfQui4.Text);
+                    if (!AlterBancoQui4)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "4", TxtQui4.Text, AmbQui4.Text, ProfQui4.Text);
+                    }
 
 
                 }
@@ -418,15 +494,32 @@ namespace HorarioSemanal.formularios
                 else
                 {
                     this.db = new SQLiteDB();
+                    string diaSemana = "sexta";
 
+                    bool AlterBancoSex1 = this.db.AtualizaHorario(diaSemana, periodo, "1", TxtSex1.Text, AmbSex1.Text, ProfSex1.Text);
+                    if (!AlterBancoSex1) 
+                    {
+                        db.NovoHorario(diaSemana, periodo, "1", TxtSex1.Text, AmbSex1.Text, ProfSex1.Text);
+                    }
 
-                    this.db.AtualizaHorario("sexta", periodo, "1", TxtSex1.Text, AmbSex1.Text, ProfSex1.Text);
+                    bool AlterBancoSex2 = this.db.AtualizaHorario(diaSemana, periodo, "2", TxtSex2.Text, AmbSex2.Text, ProfSex2.Text);
+                    if (!AlterBancoSex2)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "2", TxtSex2.Text, AmbSex2.Text, ProfSex2.Text);
+                    }
 
-                    this.db.AtualizaHorario("sexta", periodo, "2", TxtSex2.Text, AmbSex2.Text, ProfSex2.Text);
+                    bool AlterBancoSex3 = this.db.AtualizaHorario(diaSemana, periodo, "3", TxtSex3.Text, AmbSex3.Text, ProfSex3.Text);
+                    if (!AlterBancoSex3)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "3", TxtSex3.Text, AmbSex3.Text, ProfSex3.Text);
+                    }
 
-                    this.db.AtualizaHorario("sexta", periodo, "3", TxtSex3.Text, AmbSex3.Text, ProfSex3.Text);
+                    bool AlterBancoSex4 = this.db.AtualizaHorario(diaSemana, periodo, "4", TxtSex4.Text, AmbSex4.Text, ProfSex4.Text);
 
-                    this.db.AtualizaHorario("sexta", periodo, "4", TxtSex4.Text, AmbSex4.Text, ProfSex4.Text);
+                    if (!AlterBancoSex4)
+                    {
+                        db.NovoHorario(diaSemana, periodo, "4", TxtSex4.Text, AmbSex4.Text, ProfSex4.Text);
+                    }
 
 
                 }

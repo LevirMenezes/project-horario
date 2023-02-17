@@ -35,9 +35,10 @@ namespace HorarioSemanal
             // 
             // VerHorario
             // 
-            this.VerHorario.Location = new System.Drawing.Point(208, 108);
+            this.VerHorario.Location = new System.Drawing.Point(156, 88);
+            this.VerHorario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VerHorario.Name = "VerHorario";
-            this.VerHorario.Size = new System.Drawing.Size(157, 123);
+            this.VerHorario.Size = new System.Drawing.Size(118, 100);
             this.VerHorario.TabIndex = 2;
             this.VerHorario.Text = "Ver Horario";
             this.VerHorario.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@ namespace HorarioSemanal
             // 
             // AlterarHorario
             // 
-            this.AlterarHorario.Location = new System.Drawing.Point(577, 108);
+            this.AlterarHorario.Location = new System.Drawing.Point(440, 97);
+            this.AlterarHorario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AlterarHorario.Name = "AlterarHorario";
-            this.AlterarHorario.Size = new System.Drawing.Size(157, 123);
+            this.AlterarHorario.Size = new System.Drawing.Size(118, 100);
             this.AlterarHorario.TabIndex = 3;
             this.AlterarHorario.Text = "Alterar Horario";
             this.AlterarHorario.UseVisualStyleBackColor = true;
@@ -55,12 +57,11 @@ namespace HorarioSemanal
             // 
             // Tela_Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.AlterarHorario);
             this.Controls.Add(this.VerHorario);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Tela_Principal";
             this.Text = "Tela Principal";
             this.ResumeLayout(false);

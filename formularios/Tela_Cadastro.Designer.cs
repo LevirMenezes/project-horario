@@ -128,6 +128,9 @@ namespace HorarioSemanal.formularios
             this.TxtSeg1 = new System.Windows.Forms.TextBox();
             this.Btn_SalvarCadastro = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.NumPeriodo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.HorarioSemanal = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
@@ -155,7 +158,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 476);
+            this.label10.Location = new System.Drawing.Point(6, 476);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 10;
@@ -166,7 +169,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1013, 278);
+            this.label17.Location = new System.Drawing.Point(1012, 278);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(48, 13);
             this.label17.TabIndex = 17;
@@ -177,7 +180,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(796, 278);
+            this.label16.Location = new System.Drawing.Point(794, 278);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(48, 13);
             this.label16.TabIndex = 16;
@@ -188,7 +191,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(583, 278);
+            this.label15.Location = new System.Drawing.Point(581, 278);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 13);
             this.label15.TabIndex = 15;
@@ -199,7 +202,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(372, 278);
+            this.label14.Location = new System.Drawing.Point(370, 278);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 13);
             this.label14.TabIndex = 14;
@@ -210,7 +213,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(169, 278);
+            this.label13.Location = new System.Drawing.Point(167, 278);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 13);
             this.label13.TabIndex = 13;
@@ -221,7 +224,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 278);
+            this.label12.Location = new System.Drawing.Point(6, 278);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 12;
@@ -232,7 +235,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 353);
+            this.label9.Location = new System.Drawing.Point(6, 353);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 13);
             this.label9.TabIndex = 9;
@@ -243,7 +246,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 80);
+            this.label7.Location = new System.Drawing.Point(6, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 7;
@@ -254,7 +257,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 202);
+            this.label8.Location = new System.Drawing.Point(6, 202);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 13);
             this.label8.TabIndex = 8;
@@ -266,7 +269,7 @@ namespace HorarioSemanal.formularios
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label5.Location = new System.Drawing.Point(587, 7);
+            this.label5.Location = new System.Drawing.Point(585, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 5;
@@ -277,7 +280,7 @@ namespace HorarioSemanal.formularios
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Location = new System.Drawing.Point(378, 7);
+            this.label4.Location = new System.Drawing.Point(376, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 4;
@@ -287,7 +290,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 7);
+            this.label3.Location = new System.Drawing.Point(166, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 3;
@@ -307,7 +310,7 @@ namespace HorarioSemanal.formularios
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1020, 7);
+            this.label11.Location = new System.Drawing.Point(1019, 7);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 13);
             this.label11.TabIndex = 11;
@@ -323,7 +326,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel21, 5, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel20, 4, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel19, 5, 4);
@@ -379,7 +382,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel21.Controls.Add(this.AmbSex4, 0, 2);
             this.tableLayoutPanel21.Controls.Add(this.ProfSex4, 0, 1);
             this.tableLayoutPanel21.Controls.Add(this.TxtSex4, 0, 0);
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(931, 423);
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(929, 423);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
             this.tableLayoutPanel21.RowCount = 3;
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.51163F));
@@ -419,7 +422,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel20.Controls.Add(this.AmbQui4, 0, 2);
             this.tableLayoutPanel20.Controls.Add(this.ProfQui4, 0, 1);
             this.tableLayoutPanel20.Controls.Add(this.TxtQui4, 0, 0);
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(716, 423);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(714, 423);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 3;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.69231F));
@@ -459,7 +462,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel19.Controls.Add(this.AmbSex3, 0, 2);
             this.tableLayoutPanel19.Controls.Add(this.ProfSex3, 0, 1);
             this.tableLayoutPanel19.Controls.Add(this.TxtSex3, 0, 0);
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(931, 303);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(929, 303);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 3;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -499,7 +502,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel18.Controls.Add(this.AmbQui3, 0, 2);
             this.tableLayoutPanel18.Controls.Add(this.ProfQui3, 0, 1);
             this.tableLayoutPanel18.Controls.Add(this.TxtQui3, 0, 0);
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(716, 303);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(714, 303);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 3;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -539,7 +542,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel17.Controls.Add(this.AmbSex2, 0, 2);
             this.tableLayoutPanel17.Controls.Add(this.ProfSex2, 0, 1);
             this.tableLayoutPanel17.Controls.Add(this.TxtSex2, 0, 0);
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(931, 150);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(929, 150);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 3;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.67442F));
@@ -579,7 +582,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel16.Controls.Add(this.AmbQui2, 0, 2);
             this.tableLayoutPanel16.Controls.Add(this.ProfQui2, 0, 1);
             this.tableLayoutPanel16.Controls.Add(this.TxtQui2, 0, 0);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(716, 150);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(714, 150);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 3;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.18605F));
@@ -619,7 +622,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel15.Controls.Add(this.AmbSex1, 0, 2);
             this.tableLayoutPanel15.Controls.Add(this.ProfSex1, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.TxtSex1, 0, 0);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(931, 31);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(929, 31);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 3;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -659,7 +662,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel14.Controls.Add(this.AmbQui1, 0, 2);
             this.tableLayoutPanel14.Controls.Add(this.ProfQui1, 0, 1);
             this.tableLayoutPanel14.Controls.Add(this.TxtQui1, 0, 0);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(716, 31);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(714, 31);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 3;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.29412F));
@@ -699,7 +702,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel13.Controls.Add(this.AmbQua4, 0, 2);
             this.tableLayoutPanel13.Controls.Add(this.ProfQua4, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.TxtQua4, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(505, 423);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(503, 423);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 3;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.69231F));
@@ -739,7 +742,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel12.Controls.Add(this.AmbQua3, 0, 2);
             this.tableLayoutPanel12.Controls.Add(this.ProfQua3, 0, 1);
             this.tableLayoutPanel12.Controls.Add(this.TxtQua3, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(505, 303);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(503, 303);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 3;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.57534F));
@@ -779,7 +782,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel11.Controls.Add(this.AmbQua2, 0, 2);
             this.tableLayoutPanel11.Controls.Add(this.ProfQua2, 0, 1);
             this.tableLayoutPanel11.Controls.Add(this.TxtQua2, 0, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(505, 150);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(503, 150);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 3;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.14286F));
@@ -819,7 +822,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel10.Controls.Add(this.AmbQua1, 0, 2);
             this.tableLayoutPanel10.Controls.Add(this.ProfQua1, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.TxtQua1, 0, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(505, 31);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(503, 31);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 3;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.69231F));
@@ -859,7 +862,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel9.Controls.Add(this.AmbTer4, 0, 2);
             this.tableLayoutPanel9.Controls.Add(this.ProfTer4, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.TxtTer4, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(294, 423);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(292, 423);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.69231F));
@@ -899,7 +902,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel8.Controls.Add(this.AmbTer3, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.ProfTer3, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.TxtTer3, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(294, 303);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(292, 303);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 3;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.82609F));
@@ -939,7 +942,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel7.Controls.Add(this.AmbTer2, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.ProfTer2, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.TxtTer2, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(294, 150);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(292, 150);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 3;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -979,7 +982,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel6.Controls.Add(this.AmbTer1, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.ProfTer1, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.TxtTer1, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(294, 31);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(292, 31);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1019,34 +1022,34 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel4.Controls.Add(this.AmbSeg3, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.ProfSeg3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.TxtSeg3, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(99, 303);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(98, 303);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.07042F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.92958F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(188, 107);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(187, 107);
             this.tableLayoutPanel4.TabIndex = 60;
             // 
             // AmbSeg3
             // 
             this.AmbSeg3.Location = new System.Drawing.Point(3, 74);
             this.AmbSeg3.Name = "AmbSeg3";
-            this.AmbSeg3.Size = new System.Drawing.Size(182, 20);
+            this.AmbSeg3.Size = new System.Drawing.Size(181, 20);
             this.AmbSeg3.TabIndex = 41;
             // 
             // ProfSeg3
             // 
             this.ProfSeg3.Location = new System.Drawing.Point(3, 35);
             this.ProfSeg3.Name = "ProfSeg3";
-            this.ProfSeg3.Size = new System.Drawing.Size(182, 20);
+            this.ProfSeg3.Size = new System.Drawing.Size(181, 20);
             this.ProfSeg3.TabIndex = 40;
             // 
             // TxtSeg3
             // 
             this.TxtSeg3.Location = new System.Drawing.Point(3, 3);
             this.TxtSeg3.Name = "TxtSeg3";
-            this.TxtSeg3.Size = new System.Drawing.Size(182, 20);
+            this.TxtSeg3.Size = new System.Drawing.Size(181, 20);
             this.TxtSeg3.TabIndex = 39;
             // 
             // tableLayoutPanel3
@@ -1056,34 +1059,34 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel3.Controls.Add(this.AmbSeg2, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.ProfSeg2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.TxtSeg2, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(99, 150);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(98, 150);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 107);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(187, 107);
             this.tableLayoutPanel3.TabIndex = 60;
             // 
             // AmbSeg2
             // 
             this.AmbSeg2.Location = new System.Drawing.Point(3, 77);
             this.AmbSeg2.Name = "AmbSeg2";
-            this.AmbSeg2.Size = new System.Drawing.Size(182, 20);
+            this.AmbSeg2.Size = new System.Drawing.Size(181, 20);
             this.AmbSeg2.TabIndex = 41;
             // 
             // ProfSeg2
             // 
             this.ProfSeg2.Location = new System.Drawing.Point(3, 40);
             this.ProfSeg2.Name = "ProfSeg2";
-            this.ProfSeg2.Size = new System.Drawing.Size(182, 20);
+            this.ProfSeg2.Size = new System.Drawing.Size(181, 20);
             this.ProfSeg2.TabIndex = 40;
             // 
             // TxtSeg2
             // 
             this.TxtSeg2.Location = new System.Drawing.Point(3, 3);
             this.TxtSeg2.Name = "TxtSeg2";
-            this.TxtSeg2.Size = new System.Drawing.Size(182, 20);
+            this.TxtSeg2.Size = new System.Drawing.Size(181, 20);
             this.TxtSeg2.TabIndex = 39;
             // 
             // tableLayoutPanel5
@@ -1093,7 +1096,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel5.Controls.Add(this.AmbSeg4, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.ProfSeg4, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.TxtSeg4, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(99, 423);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(98, 423);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1102,28 +1105,28 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(188, 107);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(187, 107);
             this.tableLayoutPanel5.TabIndex = 61;
             // 
             // AmbSeg4
             // 
             this.AmbSeg4.Location = new System.Drawing.Point(3, 77);
             this.AmbSeg4.Name = "AmbSeg4";
-            this.AmbSeg4.Size = new System.Drawing.Size(182, 20);
+            this.AmbSeg4.Size = new System.Drawing.Size(181, 20);
             this.AmbSeg4.TabIndex = 41;
             // 
             // ProfSeg4
             // 
             this.ProfSeg4.Location = new System.Drawing.Point(3, 40);
             this.ProfSeg4.Name = "ProfSeg4";
-            this.ProfSeg4.Size = new System.Drawing.Size(182, 20);
+            this.ProfSeg4.Size = new System.Drawing.Size(181, 20);
             this.ProfSeg4.TabIndex = 40;
             // 
             // TxtSeg4
             // 
             this.TxtSeg4.Location = new System.Drawing.Point(3, 3);
             this.TxtSeg4.Name = "TxtSeg4";
-            this.TxtSeg4.Size = new System.Drawing.Size(182, 20);
+            this.TxtSeg4.Size = new System.Drawing.Size(181, 20);
             this.TxtSeg4.TabIndex = 39;
             // 
             // label6
@@ -1131,7 +1134,7 @@ namespace HorarioSemanal.formularios
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Location = new System.Drawing.Point(801, 7);
+            this.label6.Location = new System.Drawing.Point(799, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 6;
@@ -1144,34 +1147,34 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel2.Controls.Add(this.AmbSeg1, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.ProfSeg1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.TxtSeg1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(99, 31);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(98, 31);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(188, 107);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(187, 107);
             this.tableLayoutPanel2.TabIndex = 59;
             // 
             // AmbSeg1
             // 
             this.AmbSeg1.Location = new System.Drawing.Point(3, 77);
             this.AmbSeg1.Name = "AmbSeg1";
-            this.AmbSeg1.Size = new System.Drawing.Size(182, 20);
+            this.AmbSeg1.Size = new System.Drawing.Size(181, 20);
             this.AmbSeg1.TabIndex = 41;
             // 
             // ProfSeg1
             // 
             this.ProfSeg1.Location = new System.Drawing.Point(3, 40);
             this.ProfSeg1.Name = "ProfSeg1";
-            this.ProfSeg1.Size = new System.Drawing.Size(182, 20);
+            this.ProfSeg1.Size = new System.Drawing.Size(181, 20);
             this.ProfSeg1.TabIndex = 40;
             // 
             // TxtSeg1
             // 
             this.TxtSeg1.Location = new System.Drawing.Point(3, 3);
             this.TxtSeg1.Name = "TxtSeg1";
-            this.TxtSeg1.Size = new System.Drawing.Size(182, 20);
+            this.TxtSeg1.Size = new System.Drawing.Size(181, 20);
             this.TxtSeg1.TabIndex = 39;
             // 
             // Btn_SalvarCadastro
@@ -1179,7 +1182,7 @@ namespace HorarioSemanal.formularios
             this.Btn_SalvarCadastro.BackColor = System.Drawing.SystemColors.Control;
             this.Btn_SalvarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_SalvarCadastro.ForeColor = System.Drawing.Color.DarkGreen;
-            this.Btn_SalvarCadastro.Location = new System.Drawing.Point(995, 703);
+            this.Btn_SalvarCadastro.Location = new System.Drawing.Point(1035, 703);
             this.Btn_SalvarCadastro.Name = "Btn_SalvarCadastro";
             this.Btn_SalvarCadastro.Size = new System.Drawing.Size(147, 46);
             this.Btn_SalvarCadastro.TabIndex = 3;
@@ -1200,11 +1203,44 @@ namespace HorarioSemanal.formularios
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // NumPeriodo
+            // 
+            this.NumPeriodo.AutoSize = true;
+            this.NumPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumPeriodo.Location = new System.Drawing.Point(31, 40);
+            this.NumPeriodo.Name = "NumPeriodo";
+            this.NumPeriodo.Size = new System.Drawing.Size(20, 16);
+            this.NumPeriodo.TabIndex = 5;
+            this.NumPeriodo.Text = "1°";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(57, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Período";
+            // 
+            // HorarioSemanal
+            // 
+            this.HorarioSemanal.AutoSize = true;
+            this.HorarioSemanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.HorarioSemanal.Location = new System.Drawing.Point(533, 34);
+            this.HorarioSemanal.Name = "HorarioSemanal";
+            this.HorarioSemanal.Size = new System.Drawing.Size(144, 22);
+            this.HorarioSemanal.TabIndex = 7;
+            this.HorarioSemanal.Text = "Horario Semanal";
+            // 
             // Tela_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1358, 818);
+            this.Controls.Add(this.HorarioSemanal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NumPeriodo);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.Btn_SalvarCadastro);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -1253,6 +1289,7 @@ namespace HorarioSemanal.formularios
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1356,5 +1393,8 @@ namespace HorarioSemanal.formularios
         private System.Windows.Forms.TextBox ProfTer2;
         private System.Windows.Forms.TextBox TxtTer2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label NumPeriodo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label HorarioSemanal;
     }
 }

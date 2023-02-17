@@ -13,6 +13,7 @@ namespace HorarioSemanal
 {
     public partial class Tela_Principal : Form
     {
+        Variaveis VarsGlobal = new Variaveis();
         public Tela_Principal()
         {
             InitializeComponent();
